@@ -2,7 +2,7 @@ version: "3"
 services:
   transmission:
     image: linuxserver/transmission:3.00-r5-ls123
-    container_name: transmission
+    container_name: byrbt-transmission
     environment:
       - PUID=${CURRENT_PUID}
       - PGID=${CURRENT_PGID}
@@ -20,6 +20,7 @@ services:
     build:
       context: .
     image: smyyan/byrbt-bot-transmission
+    container_name: byrbt-bot
     user: ${CURRENT_PUID}:${CURRENT_PGID}
     environment:
       - TZ=Asia/Shanghai

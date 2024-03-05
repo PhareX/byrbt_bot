@@ -271,7 +271,8 @@ class TorrentBot(ContextDecorator):
                 if torrent_info['seeding'] <= 0 or torrent_info['downloading'] < 0:
                     continue
                 if torrent_info['seeding'] != 0 and float(torrent_info['downloading']) / float(
-                        torrent_info['seeding']) < 0.6:
+                        # torrent_info['seeding']) < 0.6:
+                        torrent_info['seeding']) < 0.3:
                     continue
                 ok_infos.append(torrent_info)
         return ok_infos
